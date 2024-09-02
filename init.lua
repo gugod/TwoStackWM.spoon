@@ -16,27 +16,27 @@ end
 
 function obj:moveFocusedWindowToMainStack()
   local win = hs.window.focusedWindow()
-  local cell = hs.grid.get(win, screen)
+  local cell = hs.grid.get(win)
   cell.x = 8
   cell.y = 0
   cell.h = 21
   cell.w = 13
-  hs.grid.set(win, cell, screen)
+  hs.grid.set(win, cell)
 end
 
 function obj:moveFocusedWindowToSideStack()
   local win = hs.window.focusedWindow()
-  local cell = hs.grid.get(win, screen)
+  local cell = hs.grid.get(win)
   cell.x = 0
   cell.y = 0
   cell.h = 21
   cell.w = 8
-  hs.grid.set(win, cell, screen)
+  hs.grid.set(win, cell)
 end
 
 function obj:toggleFocusedWindowToMainOrSide()
   local win = hs.window.focusedWindow()
-  local cell = hs.grid.get(win, screen)
+  local cell = hs.grid.get(win)
   if cell.x < 8
   then
     self:moveFocusedWindowToMainStack()
@@ -47,12 +47,12 @@ end
 
 function obj:maximizeFocusedWindow()
   local win = hs.window.focusedWindow()
-  local cell = hs.grid.get(win, screen)
+  local cell = hs.grid.get(win)
   cell.x = 0
   cell.y = 0
   cell.h = 21
   cell.w = 21
-  hs.grid.set(win, cell, screen)
+  hs.grid.set(win, cell)
 end
 
 return obj
