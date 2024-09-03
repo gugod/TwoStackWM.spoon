@@ -55,4 +55,10 @@ function obj:maximizeFocusedWindow()
   hs.grid.set(win, cell)
 end
 
+function obj:moveFocusedWindowToNextScreen()
+  local win = hs.window.focusedWindow()
+  local screen = win:screen()
+  win:move(win:frame():toUnitRect(screen:frame()), screen:next(), true, 0)
+end
+
 return obj
